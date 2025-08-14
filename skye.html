@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Skye's Special Page&lt;/title&gt;
+&lt;style&gt;
+body {
+font-family: 'Arial', sans-serif;
+background: linear-gradient(120deg, #fce4ec, #f8bbd0);
+color: #333;
+margin: 0;
+padding: 0;
+text-align: center;
+overflow-x: hidden;
+}
+
+header {
+background-color: #f48fb1;
+padding: 20px;
+color: white;
+position: relative;
+z-index: 2;
+}
+
+h1 {
+margin: 0;
+}
+
+.profile-img {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+margin: 20px 0;
+object-fit: cover;
+transition: transform 0.3s;
+position: relative;
+z-index: 2;
+}
+
+.profile-img:hover {
+transform: scale(1.1);
+}
+
+.content {
+padding: 20px;
+position: relative;
+z-index: 2;
+}
+
+.gallery {
+display: flex;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.gallery img {
+width: 150px;
+height: 150px;
+object-fit: cover;
+border-radius: 10px;
+transition: transform 0.3s;
+}
+
+.gallery img:hover {
+transform: rotate(10deg) scale(1.1);
+}
+
+button {
+padding: 10px 20px;
+font-size: 16px;
+background-color: #f06292;
+color: white;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s;
+margin-top: 20px;
+}
+
+button:hover {
+background-color: #ec407a;
+}
+
+footer {
+background-color: #f48fb1;
+color: white;
+padding: 10px;
+position: fixed;
+bottom: 0;
+width: 100%;
+z-index: 2;
+}
+
+/* Hearts animation */
+.heart {
+position: absolute;
+width: 20px;
+height: 20px;
+background-color: #f06292;
+transform: rotate(45deg);
+animation: float 5s linear infinite;
+z-index: 1;
+}
+
+.heart::before,
+.heart::after {
+content: '';
+position: absolute;
+width: 20px;
+height: 20px;
+background-color: #f06292;
+border-radius: 50%;
+}
+
+.heart::before {
+top: -10px;
+left: 0;
+}
+
+.heart::after {
+left: 10px;
+top: 0;
+}
+
+@keyframes float {
+0% {
+transform: translateY(0) rotate(45deg);
+opacity: 1;
+}
+100% {
+transform: translateY(-600px) rotate(45deg);
+opacity: 0;
+}
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1&gt;Welcome to Skye's Page 💖&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;https://via.placeholder.com/200&quot; alt=&quot;Skye&quot; class=&quot;profile-img&quot;&gt;
+&lt;p&gt;Hello! I love Skye. 🌸&lt;/p&gt;
+
+&lt;h2&gt;Gallery&lt;/h2&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;img src=&quot;https://via.placeholder.com/150&quot; alt=&quot;Image 1&quot;&gt;
+&lt;img src=&quot;https://via.placeholder.com/150&quot; alt=&quot;Image 2&quot;&gt;
+&lt;img src=&quot;https://via.placeholder.com/150&quot; alt=&quot;Image 3&quot;&gt;
+&lt;/div&gt;
+
+&lt;button onclick=&quot;showSurprise()&quot;&gt;Click for a Surprise 💌&lt;/button&gt;
+&lt;p id=&quot;surprise-message&quot; style=&quot;font-size:18px; color:#f06292; margin-top:10px;&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+Made with ❤️ for Skye
+&lt;/footer&gt;
+
+&lt;script&gt;
+function showSurprise() {
+const messages = [
+&quot;Skye ml! 🌸&quot;,
+&quot;love! 💖&quot;,
+&quot;You make the world brighter! ☀️&quot;,
+&quot;Smile! Someone loves you! 🥰&quot;
+];
+const randomIndex = Math.floor(Math.random() * messages.length);
+document.getElementById('surprise-message').innerText = messages[randomIndex];
+
+// Fun background flash
+document.body.style.background = '#ffe0f0';
+setTimeout(() =&gt; {
+document.body.style.background = 'linear-gradient(120deg, #fce4ec, #f8bbd0)';
+}, 500);
+}
+
+// Create floating hearts
+function createHeart() {
+const heart = document.createElement('div');
+heart.className = 'heart';
+heart.style.left = Math.random() * window.innerWidth + 'px';
+heart.style.animationDuration = 3 + Math.random() * 5 + 's';
+heart.style.width = 10 + Math.random() * 20 + 'px';
+heart.style.height = heart.style.width;
+document.body.appendChild(heart);
+
+setTimeout(() =&gt; {
+heart.remove();
+}, 8000);
+}
+
+setInterval(createHeart, 500);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
